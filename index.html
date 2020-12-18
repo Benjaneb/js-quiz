@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vilken Osu-spelare är du?</title>
+    <link rel="stylesheet" href="main.css" />
+    <script src="javascript.js" defer></script>
+  </head>
+  <body>
+    <form>
+      <h1>Osu! Quiz</h1>
+      <fieldset class="questions">
+        <legend>Användaruppgifter</legend>
+        <label
+          >Användarnamn:
+          <input type="text" name="username" placeholder="Cookiezi" required />
+        </label>
+        <label for="email-check"
+          >Vill du ha resultaten skickade till din mail?
+        </label>
+        <input type="checkbox" id="email-check" name="send-mail" />
+        <label
+          >E-mailadress:
+          <input
+            type="email"
+            name="email"
+            placeholder="cookiezi@ppy.com"
+          />
+        </label>
+      </fieldset>
+      <h2 class="hide" id="frågor-titel">Frågor</h2>
+      <fieldset class="questions hide">
+        <legend>Vilka maps ger generellt mest PP?</legend>
+        <label
+          >Tech
+          <input type="radio" name="map" value="0"  />
+        </label>
+        <label
+          >Jumps
+          <input type="radio" name="map" value="1"  />
+        </label>
+        <label
+          >Streams
+          <input type="radio" name="map" value="0"  />
+        </label>
+        <label
+          >Gamla banor
+          <input type="radio" name="map" value="0"  />
+        </label>
+      </fieldset>
+      <fieldset class="questions hide">
+        <legend>Vilken spelare är just nu #1 i världen?</legend>
+        <label
+          >Cookiezi
+          <input type="radio" name="topPlayer" value="0"  />
+        </label>
+        <label
+          >Whitecat
+          <input type="radio" name="topPlayer" value="1"  />
+        </label>
+        <label
+          >hvick225
+          <input type="radio" name="topPlayer" value="0"  />
+        </label>
+        <label
+          >idke
+          <input type="radio" name="topPlayer" value="0"  />
+        </label>
+      </fieldset>
+      <div class="form-nav">
+        <button type="button" onclick="previousQuestion()" class="hide previousBtn">Previous</button>
+        <button type="button" onclick="nextQuestion()" class="nextBtn">Next</button>
+      </div>
+      <button id="submit" class="hide" onclick="submitQuiz()">Skicka in</button>
+    </form>
+    <article id="result" class="hide">
+      <h2>Din totalpoäng blev: <span class="totalpoäng">0</span> / 2!</h2>
+      <button type="reset" onclick="reset()">Kör igen!</button>
+    </article>
+    <p>Fråga <span id="current"></span> av <span id="total"></span></p>
+  </body>
+</html>

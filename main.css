@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightgrey;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  display: block;
+}
+
+form,
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: whitesmoke;
+  padding: 0 3em;
+  margin: 1em 0;
+  border-radius: 0.5em;
+}
+
+form > * {
+  margin: 0 0 1.5rem 0;
+}
+
+h1 {
+  margin: 1em 0;
+}
+
+fieldset {
+  max-width: max-content;
+  border-radius: 0.8em;
+  background-color: #e7e7e7;
+  box-shadow: 0.2em;
+}
+
+legend {
+  background-color: grey;
+  padding: 0.5em;
+  color: white;
+  border-radius: 1em;
+  text-align: center;
+}
+
+label {
+  margin: 1em;
+}
+
+input {
+  background-color: white;
+}
+
+input[type="text"],
+input[type="email"] {
+  border-radius: 1em;
+  height: 2em;
+  width: 15em;
+  padding-left: 1em;
+}
+
+#email-check {
+  display: inline-block;
+}
+
+#email-check + label {
+  display: none;
+}
+
+#email-check:checked + label {
+  display: block;
+}
+
+input:focus {
+  outline: none;
+}
+
+[type="radio"] {
+  float: right;
+}
+
+button {
+  padding: 1em;
+  border-radius: 1em;
+  font-size: 1rem;
+}
+
+button:active,
+button::selection {
+  outline: none;
+}
+
+.form-nav {
+  width: 100%;
+}
+
+.nextBtn {
+  float: right;
+}
+
+.invalid {
+  background-color: #ffa494;
+}
+
+.hide {
+  display: none;
+}
