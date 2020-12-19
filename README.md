@@ -1,3 +1,4 @@
-# js-quiz
+# Tangentbords-quiz
 
-Det här är ett quiz om Osu!, gjort med HTML, CSS och Javascript.
+Det här är ett quiz för att testa dina kunskaper inom världen av custom tangentbord.
+Skapat med HTML, CSS och Javascript.
