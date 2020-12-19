@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vilken Osu-spelare är du?</title>
+    <title>Tangentbords-quiz</title>
     <link rel="stylesheet" href="main.css" />
     <script src="javascript.js" defer></script>
   </head>
   <body>
-    <form>
+    <form class="quiz">
       <h1>Osu! Quiz</h1>
-      <fieldset class="questions">
+      <fieldset>
         <legend>Användaruppgifter</legend>
         <label
-          >Användarnamn:
-          <input type="text" name="username" placeholder="Cookiezi" required />
+          >Namn:
+          <input type="text" name="username" placeholder="Felix" required />
         </label>
-        <label for="email-check"
+        <label id="email-check-label" for="email-check"
           >Vill du ha resultaten skickade till din mail?
         </label>
         <input type="checkbox" id="email-check" name="send-mail" />
@@ -25,59 +25,100 @@
           <input
             type="email"
             name="email"
-            placeholder="cookiezi@ppy.com"
+            placeholder="jebkeyless@klobcloud.com"
           />
         </label>
       </fieldset>
       <h2 class="hide" id="frågor-titel">Frågor</h2>
       <fieldset class="questions hide">
-        <legend>Vilka maps ger generellt mest PP?</legend>
+        <legend>Vilken switch är värst?</legend>
         <label
-          >Tech
-          <input type="radio" name="map" value="0"  />
+          >Gateron Yellow
+          <input type="radio" name="switch" value="0" required />
         </label>
         <label
-          >Jumps
-          <input type="radio" name="map" value="1"  />
+          >Razer Green
+          <input type="radio" name="switch" value="1" required />
         </label>
         <label
-          >Streams
-          <input type="radio" name="map" value="0"  />
+          >Holy Pandas
+          <input type="radio" name="switch" value="0" required />
         </label>
         <label
-          >Gamla banor
-          <input type="radio" name="map" value="0"  />
+          >Cherry MX Brown
+          <input type="radio" name="switch" value="0" required />
         </label>
       </fieldset>
       <fieldset class="questions hide">
-        <legend>Vilken spelare är just nu #1 i världen?</legend>
+        <legend>Vilket material vill man helst ha på keycaps?</legend>
         <label
-          >Cookiezi
-          <input type="radio" name="topPlayer" value="0"  />
+          >ABS
+          <input type="radio" name="material" value="0" required />
         </label>
         <label
-          >Whitecat
-          <input type="radio" name="topPlayer" value="1"  />
+          >PVC
+          <input type="radio" name="material" value="0" required />
         </label>
         <label
-          >hvick225
-          <input type="radio" name="topPlayer" value="0"  />
+          >PBT
+          <input type="radio" name="material" value="1" required />
         </label>
         <label
-          >idke
-          <input type="radio" name="topPlayer" value="0"  />
+          >PLA
+          <input type="radio" name="material" value="0" required />
         </label>
+      </fieldset>
+      <fieldset class="questions hide">
+        <legend>Vilken keycap profile är detta?</legend>
+        <label
+          >SA
+          <input type="radio" name="profile" value="1" required />
+        </label>
+        <label
+          >Cherry
+          <input type="radio" name="profile" value="0" required />
+        </label>
+        <label
+          >OEM
+          <input type="radio" name="profile" value="0" required />
+        </label>
+        <label
+          >DSA
+          <input type="radio" name="profile" value="0" required />
+        </label>
+        <img src="keycaps.jpg" alt="bild på keycaps" class="bild">
+      </fieldset>
+      <fieldset class="questions hide">
+        <legend>Hur mycket såldes Keycult No.1 Rev.1 för?</legend>
+        <label
+          >$499
+          <input type="radio" name="pris" value="0" required />
+        </label>
+        <label
+          >$200
+          <input type="radio" name="pris" value="0" required />
+        </label>
+        <label
+          >$965
+          <input type="radio" name="pris" value="0" required />
+        </label>
+        <label
+          >$1668
+          <input type="radio" name="pris" value="1" required />
+        </label>
+        <img src="dyrt_tangentbord.JPG" alt="bild på tangentbord" class="bild">
       </fieldset>
       <div class="form-nav">
         <button type="button" onclick="previousQuestion()" class="hide previousBtn">Previous</button>
         <button type="button" onclick="nextQuestion()" class="nextBtn">Next</button>
       </div>
-      <button id="submit" class="hide" onclick="submitQuiz()">Skicka in</button>
+      <button id="submit" type="button" class="hide" onclick="submitQuiz()">Skicka in</button>
+      <p class="hide" id="error">Du har inte svarat på alla frågor!</p>
     </form>
     <article id="result" class="hide">
-      <h2>Din totalpoäng blev: <span class="totalpoäng">0</span> / 2!</h2>
+      <h1>Din totalpoäng blev: <span id="totalpoäng">0</span> / <span id="möjliga"></span>!</h1>
       <button type="reset" onclick="reset()">Kör igen!</button>
     </article>
-    <p>Fråga <span id="current"></span> av <span id="total"></span></p>
+    <p id="currentP">Fråga <span id="current"></span> av <span id="total"></span></p>
   </body>
 </html>

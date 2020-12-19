@@ -30,7 +30,8 @@ article {
   border-radius: 0.5em;
 }
 
-form > * {
+form > *,
+article > * {
   margin: 0 0 1.5rem 0;
 }
 
@@ -70,7 +71,20 @@ input[type="email"] {
 }
 
 #email-check {
-  display: inline-block;
+  display: none;
+}
+
+#email-check-label {
+  padding: 0.2em;
+  border-radius: 0.2em;
+}
+
+#email-check-label:after {
+  background-color: lightgrey;
+}
+
+#email-check-label:hover {
+  background-color: aquamarine;
 }
 
 #email-check + label {
@@ -114,4 +128,12 @@ button::selection {
 
 .hide {
   display: none;
+}
+
+#error {
+  color: #ff6b51;
+}
+
+.bild {
+  width: 300px;
 }
